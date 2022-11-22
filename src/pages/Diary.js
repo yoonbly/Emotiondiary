@@ -12,6 +12,12 @@ const Diary = () => {
   const diaryList = useContext(DiaryStateContext);
   const navigate = useNavigate();
   const [data, setData] = useState();
+  // title 변경
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `감정 일기장 - ${id}번 일기`;
+  }, []);
+  // 일기 데이터 불러오기
   useEffect(() => {
     if (diaryList.length >= 1) {
       const targetDiary = diaryList.find(
