@@ -23,7 +23,11 @@ const Home = () => {
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        // 마지막 시간으로 설정해야 포함됨!
+        0,
+        23,
+        59,
+        59
       ).getTime();
       // 당월 안에 작성된 일기 데이터만 조회
       setData(
